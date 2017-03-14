@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Mini_Project_S6</string>
+    <string name="title_activity_add_car">AddCar</string>
+    <string name="title_activity_car_added">CarAdded</string>
+    <string name="brand_name">Brand Name</string>
+</resources>

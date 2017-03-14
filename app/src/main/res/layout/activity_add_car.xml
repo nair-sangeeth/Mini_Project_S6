@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.example.nair_sangeeth.mini_project_s6.AddCar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add A Car"
+            android:id="@+id/t8"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textSize="@dimen/abc_action_bar_progress_bar_size"
+            android:textColor="#19c4d7"
+            android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/HardwareID"
+        android:layout_marginBottom="44dp"
+        android:textSize="18dp"
+        android:textColor="@color/cast_expanded_controller_background_color"
+        android:layout_above="@+id/AddCarButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="Hardware Kit ID" />
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+        android:ems="10"
+            android:id="@+id/CarRegNum"
+        android:textSize="18dp"
+        android:textColor="@color/cast_expanded_controller_background_color"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="Registration Number" />
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:id="@+id/AddCarButton"
+        android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Brand Name"
+        android:ems="10"
+        android:id="@+id/CarBrand"
+        android:theme="@style/AlertDialog.AppCompat.Light"
+        android:textColor="@color/cast_expanded_controller_background_color"
+        android:textSize="18dp"
+        android:layout_marginBottom="60dp"
+        android:layout_above="@+id/CarRegNum"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
+
