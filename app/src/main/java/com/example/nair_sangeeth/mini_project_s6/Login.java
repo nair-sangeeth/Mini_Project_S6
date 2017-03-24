@@ -18,6 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
@@ -28,6 +30,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private ProgressDialog progressDialog;
     public FirebaseAuth firebaseAuth;
     public FirebaseUser user;
+    public DatabaseReference firebaseRef;
+
 
 
     @Override
@@ -43,6 +47,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         loginbutton.setOnClickListener(this);
         textViewSignup.setOnClickListener(this);
         firebaseAuth= FirebaseAuth.getInstance();
+        firebaseRef= FirebaseDatabase.getInstance().getReference();
 
         if (firebaseAuth.getCurrentUser() !=null){
             //user is already logged in
@@ -71,7 +76,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         //we show a progress bar becasue it's an internet operation and may take time
         progressDialog.setMessage("You are logging in...");
         progressDialog.show();
-
         firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {

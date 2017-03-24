@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="mini_project_s6"
+        android:name=".mini_project_s6"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -19,11 +19,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".First_Time_User_HomeScreenActivity" />
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
         <activity android:name=".Sign_up">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,7 +37,8 @@
             android:name=".AddCar"
             android:label="@string/title_activity_add_car"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".CarAdded"></activity>
+        <activity android:name=".CarAdded" />
+        <activity android:name=".CarHome"></activity>
     </application>
 
 </manifest>

@@ -10,16 +10,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.nair_sangeeth.mini_project_s6.First_Time_User_HomeScreenActivity">
 
-    <TextView
-    android:layout_width="match_parent"
-    android:layout_height="20pt"
-    android:textAppearance="?android:attr/textAppearanceMedium"
-    android:text="You Haven't added any car yet"
-    android:id="@+id/textViewUser"
-        android:layout_alignParentTop="true"
+    <Button
+        android:id="@+id/findCar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="37dp" />
+        android:layout_above="@+id/imageView"
+        android:layout_marginTop="12dp"
+        android:text="Find Your Car" />
 
     <Button
         android:text="Logout"
@@ -36,19 +35,19 @@
     android:id="@+id/imageView"
     android:src="@drawable/image"
     android:contentDescription=""
-        android:layout_alignTop="@+id/addcar"
+        android:layout_marginBottom="13dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="21dp" />
+        android:layout_alignParentStart="true" />
 
     <Button
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:text="Add A Car"
-android:id="@+id/addcar"
-        android:layout_below="@+id/textViewUser"
+        android:id="@+id/addcar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/findCar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp" />
+        android:layout_marginTop="59dp"
+        android:text="Add A Car" />
 
     <TextView
         android:layout_width="wrap_content"
