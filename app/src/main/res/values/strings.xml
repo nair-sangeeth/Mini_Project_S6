@@ -3,4 +3,9 @@
     <string name="title_activity_add_car">AddCar</string>
     <string name="title_activity_car_added">CarAdded</string>
     <string name="brand_name">Brand Name</string>
+    <string name="add_a_car">Add A Car</string>
+    <string name="find_your_car">Find Your Car</string>
+    <string name="logout">Logout</string>
+    <string name="welcome_user">Welcome User</string>
+    <string name="title_activity_vehicle_location">Map</string>
 </resources>

@@ -23,7 +23,7 @@ public class AddCar extends AppCompatActivity implements View.OnClickListener{
     private EditText HardwareID;
     private Button CarSubmit;
     private String BrandName;
-    private String RegNumber;
+    public String RegNumber;
     private String HardwareId;
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
@@ -54,14 +54,21 @@ public class AddCar extends AppCompatActivity implements View.OnClickListener{
         UserInfo userInfo=new UserInfo();
         userInfo.VehicleInfo(BrandName,RegNumber,HardwareId);
         DatabaseReference childref= databaseReference.child(user.getUid());
-        childref.child("Vehicle Info").push().setValue(userInfo);
+        DatabaseReference vehicleRef=childref.child("Vehicle Information");
+        DatabaseReference uniqID=vehicleRef.child(RegNumber);
+        DatabaseReference brandName=uniqID.child("Brand Name");
+        DatabaseReference RegNum=uniqID.child("Registration Number");
+        DatabaseReference HardwareID=uniqID.child("Hardware ID");
+        brandName.child("Brand Name").setValue(BrandName);
+        RegNum.child("Registration Number").setValue(RegNumber);
+        HardwareID.child("HID").setValue(HardwareId);
         Toast.makeText(this,"Vehicle Added", Toast.LENGTH_SHORT).show();
     }
     @Override
     public void onClick(View view) {
         if (view==CarSubmit){
             AddVehicle();
-            startActivity(new Intent(AddCar.this,CarAdded.class));
+            startActivity(new Intent(AddCar.this,CarAdded.class).putExtra("RegNumber",RegNumber).putExtra("BName",BrandName).putExtra("HID",HardwareId));
         }
     }
 }

@@ -1,9 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.nair_sangeeth.mini_project_s6.CarHome">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/BName"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/RegNum"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="308dp"
+        android:layout_height="209dp"
+        app:srcCompat="@drawable/icon" />
+
+    <Button
+        android:id="@+id/buttonDriverADD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Driver" />
+
+    <Button
+        android:id="@+id/locationButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Current Location" />
+
+    <Button
+        android:id="@+id/historyButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="History" />
+
+    <Button
+        android:id="@+id/HomeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Home" />
+
+</LinearLayout>

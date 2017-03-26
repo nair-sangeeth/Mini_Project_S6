@@ -118,8 +118,14 @@ public class Sign_up extends AppCompatActivity implements View.OnClickListener{
                     userInfo.UserDetails(lname,fname,email);
                     Toast.makeText(Sign_up.this,"Registration Successfull..!!",Toast.LENGTH_SHORT).show();
                     user=firebaseAuth.getInstance().getCurrentUser();
-                    DatabaseReference profileref=firebaseRef.child(user.getUid());
-                    profileref.child("Profile Information").setValue(userInfo);
+                    DatabaseReference childref=firebaseRef.child(user.getUid());
+                    DatabaseReference profileref=childref.child("Profile Information");
+                    DatabaseReference FNameRef=profileref.child("First Name");
+                    DatabaseReference LNameRef=profileref.child("Last Name");
+                    DatabaseReference Email=profileref.child("Email");
+                    FNameRef.child("First Name:").setValue(fname);
+                    LNameRef.child("Last Name:").setValue(lname);
+                    Email.child("Email:").setValue(email);
                     finish();
                     startActivity(new Intent(getApplicationContext(),First_Time_User_HomeScreenActivity.class));
                 }

@@ -1,5 +1,6 @@
 package com.example.nair_sangeeth.mini_project_s6;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,56 +27,30 @@ import java.util.ArrayList;
 public class CarAdded extends AppCompatActivity implements View.OnClickListener {
 
 
-    private ListView VehicleDetails;
-    private ArrayList<String> Vehicle_Details=new ArrayList<String>();
-    private FirebaseAuth firebaseAuth;
-    private DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference();
     private Button buttonCont;
-    private DatabaseReference VehicleRef;
     public FirebaseUser user;
+    public TextView Bname;
+    public TextView RNum;
+    public TextView Hid;
+    public String RegNumber;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_added);
-        firebaseAuth=FirebaseAuth.getInstance();
-        user=firebaseAuth.getInstance().getCurrentUser();
-        VehicleDetails=(ListView) findViewById(R.id.VehicleDetailsList);
-        final ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this,R.layout.activity_car_added,Vehicle_Details);
-        VehicleDetails.setAdapter(arrayAdapter);
-
+        Bname=(TextView) findViewById(R.id.BName);
+        RNum=(TextView) findViewById(R.id.RegNum);
+        Hid=(TextView) findViewById(R.id.HID);
+        Intent i=getIntent();
+        RegNumber= i.getStringExtra("RegNumber");
+        String BName=i.getStringExtra("BName");
+        String HID=i.getStringExtra("HID");
         buttonCont=(Button) findViewById(R.id.buttonContinue);
         buttonCont.setOnClickListener(this);
-        VehicleRef=databaseReference.child("Vehicle Information");
-
-        VehicleRef.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                String value=dataSnapshot.getValue(String.class);
-                Vehicle_Details.add(value);
-                arrayAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-
+        RNum.setText(RegNumber);
+        Bname.setText(BName);
+        Hid.setText(HID);
+        
 
 
 
@@ -84,7 +59,7 @@ public class CarAdded extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View view) {
         if (view==buttonCont){
-
+        startActivity(new Intent(CarAdded.this,AddDriver.class).putExtra("RegNum",RegNumber));
         }
 
     }

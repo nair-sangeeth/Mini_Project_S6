@@ -86,12 +86,12 @@
         android:layout_marginTop="25dp" />
 
     <Button
-        android:layout_width="500px"
-        android:layout_height="100px"
-        android:text="Sign Up"
-        android:textAlignment="center"
         android:id="@+id/signupbutton"
-        android:layout_marginBottom="22dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:text="Sign Up"
+        android:textAlignment="center" />
 </RelativeLayout>

@@ -39,6 +39,8 @@ public class First_Time_User_HomeScreenActivity extends AppCompatActivity implem
     private String username;
     private DatabaseReference databaseReference;
     private DatabaseReference childref,profileref;
+    private Button buttonViewCar;
+    private DatabaseReference firstNameref;
     private String[] userInfo=new String[3];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,18 +52,20 @@ public class First_Time_User_HomeScreenActivity extends AppCompatActivity implem
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseUser=firebaseAuth.getInstance().getCurrentUser();
         buttonlogout=(Button) findViewById(R.id.logout);
+        buttonViewCar=(Button) findViewById(R.id.findCar);
         buttonAddCar=(Button) findViewById(R.id.addcar);
         textViewWelcome=(TextView) findViewById(R.id.textViewWelMess);
         buttonAddCar.setOnClickListener(this);
         buttonlogout.setOnClickListener(this);
+        buttonViewCar.setOnClickListener(this);
         childref=databaseReference.child(firebaseUser.getUid());
         profileref=childref.child("Profile Information");
-        //firstNameref=profileref.child("FName");
-        profileref.addChildEventListener(new ChildEventListener() {
+        firstNameref=profileref.child("First Name");
+        firstNameref.addChildEventListener(new ChildEventListener() {
            @Override
            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                username=dataSnapshot.getValue(String.class);
-               //username=userInfo.FName;s
+               System.out.print(username);
                Toast.makeText(First_Time_User_HomeScreenActivity.this, username, Toast.LENGTH_SHORT).show();
                Welcome="Welcome "+username;
                textViewWelcome.setText(Welcome);
@@ -93,13 +97,15 @@ public class First_Time_User_HomeScreenActivity extends AppCompatActivity implem
     @Override
     public void onClick(View v) {
         if (v.equals(buttonAddCar)){
-            finish();
             startActivity(new Intent(First_Time_User_HomeScreenActivity.this,AddCar.class));
         }
         else if (v.equals(buttonlogout)){
             firebaseAuth.signOut();
             finish();
             startActivity(new Intent(First_Time_User_HomeScreenActivity.this,Login.class));
+        }
+        else if (v.equals(buttonViewCar)){
+            startActivity(new Intent(First_Time_User_HomeScreenActivity.this,SearchCar.class));
         }
     }
 }

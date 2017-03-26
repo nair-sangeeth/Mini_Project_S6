@@ -14,20 +14,21 @@
         android:id="@+id/findCar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/find_your_car"
+        android:layout_below="@+id/addcar"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_above="@+id/imageView"
-        android:layout_marginTop="12dp"
-        android:text="Find Your Car" />
+        android:layout_alignParentStart="true" />
 
     <Button
-        android:text="Logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:text="@string/logout"
+        tools:ignore="RelativeOverlap" />
 
     <ImageView
     android:layout_width="wrap_content"
@@ -35,19 +36,17 @@
     android:id="@+id/imageView"
     android:src="@drawable/image"
     android:contentDescription=""
-        android:layout_marginBottom="13dp"
+        tools:ignore="ContentDescription"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginBottom="23dp" />
 
     <Button
         android:id="@+id/addcar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/findCar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="59dp"
-        android:text="Add A Car" />
+        android:text="@string/add_a_car" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -61,6 +60,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:text="Welcome User" />
+        android:text="@string/welcome_user" />
 
 </RelativeLayout>

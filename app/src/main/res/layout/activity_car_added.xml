@@ -34,22 +34,48 @@
             android:layout_centerHorizontal="true" />
 
     <Button
-        android:text="Continue"
+        android:id="@+id/buttonContinue"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Continue" />
+
+    <EditText
+        android:id="@+id/BName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonContinue"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_alignEnd="@+id/i3"
+        android:layout_alignRight="@+id/i3"
         android:layout_below="@+id/i3"
-        android:layout_marginTop="9dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_above="@+id/buttonContinue"
-        android:id="@+id/VehicleDetailsList" />
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:ems="10"
+        android:hint="BName"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/RegNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/HID"
+        android:layout_alignStart="@+id/HID"
+        android:layout_below="@+id/BName"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="RegNum"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/HID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/BName"
+        android:layout_alignRight="@+id/BName"
+        android:layout_below="@+id/RegNum"
+        android:ems="10"
+        android:hint="HID"
+        android:inputType="textPersonName" />
 
 </RelativeLayout>
 
